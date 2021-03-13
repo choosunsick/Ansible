@@ -9,7 +9,7 @@
 
 ## 관리자 노드(Control node)
 
-Any machine with Ansible installed. -->
+<!-- Any machine with Ansible installed. -->
 앤서블이 설치된 머신
 <!-- You can run Ansible commands and playbooks by invoking the ansible or ansible-playbook command from any control node. -->
 여러분은 앤서블 명령어들와 각본(playbook)들을 앤서블 또는 앤서블-각본 명령어를 어떠한 관리자 노드에서도 호출하여 실행할 수 있습니다.
@@ -77,5 +77,4 @@ For an idea of how many collections Ansible includes, take a look at the Collect
 <!-- Playbooks are written in YAML and are easy to read, write, share and understand. -->
 각본은 YAML 포맷으로 쓰여지기에 읽기도 쓰기도 공유하기도 쉽습니다.
 <!-- To learn more about playbooks, see Intro to playbooks. -->
-각본에 대해서 더 배우기 위해서는, 각본 소개를 보세요.
-여러분이 멋진 연극을 만들었다고 가정합시다. 이때 그걸 글로 쓰면 각본이 됩니다. 그 각본을 가지고 몇 번이고 연극으로 할 수 있습니다.
+각본에 대해서 더 배우기 위해서는, [각본(playbooks) 소개](https://docs.ansible.com/ansible/latest/user_guide/playbooks_intro.html#about-playbooks)를 보세요.
