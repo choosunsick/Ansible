@@ -75,3 +75,13 @@ raspberrypi.local | SUCCESS => {
 
 - [[Ansible] host x.x.x.x should use /usr/bin/python3 - 호롤리한 하루](https://gruuuuu.github.io/error/ansible-py-err/#)
 - [Interpreter Discovery — Ansible Documentation](https://docs.ansible.com/ansible/2.10/reference_appendices/interpreter_discovery.html)
+
+그냥 다음과 같이 `-e 'ansible_python_interpreter=/usr/bin/python3'`을 줘도 앞의 에러는 나오지 않습니다.
+
+```bash
+❯ ansible all -m ping  --ask-pass --user=pi --inventory 'raspberrypi.local,' -e 'ansible_python_interpreter=/usr/bin/python3'
+SSH password: 
+raspberrypi.local | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}```
