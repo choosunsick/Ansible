@@ -18,6 +18,10 @@ PING raspberrypi.local (192.168.0.16): 56 data bytes
 
 - [맥에서 sshpass 설치하기 | Epistemology](http://www.epistemology.pe.kr/2021/03/09/1361)
 
+`sshpass`로 사용하시려면, `public SSH key`를 사용해야 합니다. 아래 링크를 참고하시면 됩니다.
+
+- [Ansible Setting Up SSH (Raspberry Pi) – Geek Tech Stuff](https://geektechstuff.com/2019/06/27/ansible-setting-up-ssh-raspberry-pi/)
+
 `sshpass`을 연습해보겠습니다.
 
 ```bash

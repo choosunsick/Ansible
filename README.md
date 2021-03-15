@@ -6,4 +6,4 @@
 
 라즈베리파이를 가지고 엔서블을 사용하려면, 아래 링크를 참고하세요!
 
-- [라즈베리파이에서 Ansible 기초](https://github.com/LOPES-HUFS/Ansible/blob/main/Raspberry_Pi_intro/intro.md)
+- [라즈베리파이에서 Ansible 기초](/Users/jaehwan/git/Ansible/Doc/Raspberry_Pi_intro.md)
