@@ -71,12 +71,12 @@ raspberrypi.local | SUCCESS => {
 
 ```
 
-`pong`이 나왔기 때문에 잘 된 것입니다. 앞의 복잡한 이야기는 파이썬 설정 문제입니다. 다음 링크를 참고합니다. 두 번째 링크를 앞 에러에 나온 링크입니다. 해결책은 설정파일에 `ansible_python_interpreter=/usr/bin/python3`을 넣어주면 되는 것 같습니다.
+`pong`이 나왔기 때문에 잘 된 것입니다. 앞의 복잡한 이야기는 파이썬 설정 문제입니다. 다음 링크를 참고합니다. 두 번째 링크를 앞 [DEPRECATION WARNING]에 나온 링크입니다. 해결책은 설정파일에 `ansible_python_interpreter=/usr/bin/python3`을 넣어주면 되는 것 같습니다.
 
 - [[Ansible] host x.x.x.x should use /usr/bin/python3 - 호롤리한 하루](https://gruuuuu.github.io/error/ansible-py-err/#)
 - [Interpreter Discovery — Ansible Documentation](https://docs.ansible.com/ansible/2.10/reference_appendices/interpreter_discovery.html)
 
-그냥 다음과 같이 `-e 'ansible_python_interpreter=/usr/bin/python3'`을 줘도 앞의 에러는 나오지 않습니다.
+그냥 다음과 같이 `-e 'ansible_python_interpreter=/usr/bin/python3'`을 명령에 추가하면, 앞의 [DEPRECATION WARNING]는 나오지 않습니다.
 
 ```bash
 ❯ ansible all -m ping  --ask-pass --user=pi --inventory 'raspberrypi.local,' -e 'ansible_python_interpreter=/usr/bin/python3'
@@ -84,4 +84,11 @@ SSH password:
 raspberrypi.local | SUCCESS => {
     "changed": false,
     "ping": "pong"
-}```
+}
+```
+
+참고로 `ansible-playbook`을 사용할 때는 아래와 같이 하면, 앞의 [DEPRECATION WARNING]가 안 나옵니다.
+
+```bash
+ansible-playbook sample-playbook.yml -e 'ansible_python_interpreter=/usr/bin/python3'
+```
