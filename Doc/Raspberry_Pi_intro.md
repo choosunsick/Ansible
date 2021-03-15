@@ -92,3 +92,7 @@ raspberrypi.local | SUCCESS => {
 ```bash
 ansible-playbook sample-playbook.yml -e 'ansible_python_interpreter=/usr/bin/python3'
 ```
+
+아래 링크를 참고합니다.
+
+- [Python 3 Support — Ansible Documentation](https://docs.ansible.com/ansible/latest/reference_appendices/python_3_support.html)
