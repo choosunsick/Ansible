@@ -1,0 +1,9 @@
+- hosts: all
+  user: pi
+  tasks:
+    - name: Ping all hosts
+      ping:
+    - name: Let's see how much disk is left.
+      shell: df -h
+      register: login
+    - debug: var=login["stdout_lines"]
