@@ -158,7 +158,7 @@ $ANSIBLE_VAULT;1.1;AES256
 6161626230303762626433633438316333353964326635343364
 ```
 
-입력한 것을 확인하려면 다음과 같이 `ansible-vault view`를 이라는 명령을 사용하면 됩니다. `Vault password:`은 앞서 입력한 것은 사용하면 됩니다. 전 앞에서 설정한 `1234`을 입력했습니다. `Vault password:`을 입력하고 파일 내용이 왔지만, 다음 과정으로 넘어가지 못한다면, `esc` 키를 누르신 다음, `q!`을 입력하신 다음 `return`키를 누르시면 됩니다.
+입력한 것을 확인하려면 다음과 같이 `ansible-vault view`를 이라는 명령을 사용하면 됩니다. `Vault password:`은 앞서 입력한 것은 사용하면 됩니다. 전 앞에서 설정한 `1234`을 입력했습니다. `Vault password:`을 입력하고 파일 내용이 왔지만, 다음 과정으로 넘어가지 못한다면, `esc` 키를 누르신 다음, `q!`을 입력하신 다음 `return`키를 누르시면 됩니다. 참고로 암호를 해체하려면, 어렵게 말하면 복호화하려면, `ansible-vault decrypt encrypt_hosts`과 같이 하시면 됩니다.
 
 ```bash
 ❯ ansible-vault view encrypt_hosts
