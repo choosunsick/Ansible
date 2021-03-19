@@ -1,0 +1,8 @@
+---
+- hosts: all
+  user: pi
+  vars:
+    custom_ssh_port: 1234
+  tasks:
+    - name: Ping all hosts
+      ping:
