@@ -1,6 +1,6 @@
 # 라즈베리파이을 이용한 앤서블의 본격적인 기초
 
-앞의 글, [라즈베리파이을 이용한 Ansible 기초](https://github.com/LOPES-HUFS/Ansible/blob/main/Raspberry_Pi_intro/doc_1.md)에서 앤서블의 `Hello World!`인 앤서블 `ping`을 해봤습니다. 아래 코드까지 진행했습니다.
+앞의 글, [라즈베리파이를 이용한 Ansible 기초](https://github.com/LOPES-HUFS/Ansible/blob/main/Raspberry_Pi_intro/doc_1.md)에서 앤서블의 `Hello World!`인 앤서블 `ping`을 해봤습니다. 아래 코드까지 진행했습니다.
 
 ```bash
 # PW: raspberry
