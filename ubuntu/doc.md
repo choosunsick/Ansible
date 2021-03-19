@@ -45,3 +45,9 @@ ansible-playbook nginx.yml -i hosts -e 'ansible_ssh_port=1234' -u pi --ask-becom
 다음으로 들어가면 작동하는 모습을 볼 수 있습니다.
 
 [http://localhost:1235](http://localhost:1235)
+
+좀 더 깊게 사용하려면 다음 링크를 참고하세요!
+
+- [Install and configure Nginx using Ansible](https://code-maven.com/install-and-configure-nginx-using-ansible)
+- [How to setup an ssh server within a docker container - DEV Community](https://dev.to/s1ntaxe770r/how-to-setup-ssh-within-a-docker-container-i5i)
+- [Ansible – Looking at commands & Playbooks (Raspberry Pi) – Geek Tech Stuff](https://geektechstuff.com/2019/06/27/ansible-looking-at-commands-playbooks-raspberry-pi/)
