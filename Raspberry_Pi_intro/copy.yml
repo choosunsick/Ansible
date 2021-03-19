@@ -1,0 +1,8 @@
+---
+- hosts: all
+  remote_user: root
+  tasks:
+  - name: store file to remote server
+    copy:
+      src: hadoop-3.2.2.tar.gz 
+      dest: ~/hadoop-3.2.2.tar.gz 

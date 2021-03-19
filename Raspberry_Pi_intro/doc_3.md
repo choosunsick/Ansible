@@ -2,8 +2,8 @@
 
 이제 마지막 기초입니다. 앞선 글은 다음과 같습니다.
 
-- [라즈베리파이을 이용한 Ansible 기초](https://github.com/LOPES-HUFS/Ansible/blob/main/Raspberry_Pi_intro/doc_1.md)
-- [라즈베리파이을 이용한 앤서블의 본격적인 기초](https://github.com/LOPES-HUFS/Ansible/blob/main/Raspberry_Pi_intro/doc_2.md)
+- [라즈베리파이를 이용한 Ansible 기초](https://github.com/LOPES-HUFS/Ansible/blob/main/Raspberry_Pi_intro/doc_1.md)
+- [라즈베리파이를 이용한 앤서블의 본격적인 기초](https://github.com/LOPES-HUFS/Ansible/blob/main/Raspberry_Pi_intro/doc_2.md)
 
 앞 글에서 각종 내용이 들어 있는 인벤토리 파일을 암호화해서 앤서블 `ping`을 해봤습니다.
 
@@ -123,5 +123,76 @@ raspberrypi.local          : ok=4    changed=1    unreachable=0    failed=0    s
 
 [http://192.168.0.16](http://192.168.0.16)
 
- 워 이렇게 번잡하게 설치하는지 궁굼하실 수도 있겠지만, 서버 1개에 설치하는 것은 그리 어렵지 않지만, 같은 것을 서버 여러 대에 설치하고자 한다면, 이와 같이 엔서블을 이용하는 것이 훨씬 더 효과적입니다. 그리고 한 번 잘 돌아간 엔서블 코드는 오타도 없는 코드이니, 직접 터미널에서 작업할 때 오타의 위험에서도 벗어나실 수 있습니다.
+워 이렇게 번잡하게 설치하는지 궁굼하실 수도 있겠지만, 서버 1개에 설치하는 것은 그리 어렵지 않지만, 같은 것을 서버 여러 대에 설치하고자 한다면, 이와 같이 엔서블을 이용하는 것이 훨씬 더 효과적입니다. 그리고 한 번 잘 돌아간 엔서블 코드는 오타도 없는 코드이니, 직접 터미널에서 작업할 때 오타의 위험에서도 벗어나실 수 있습니다.
 
+진짜 마지막으로 현재 관리하고 있는 라즈베리파이 서버로 파일을 복사해 보겠습니다. 하둡 파일을 다운받아 보내겠습니다. 우선 파일을 다운받겠습니다.
+
+```bash
+wget https://downloads.apache.org/hadoop/common/hadoop-3.2.2/hadoop-3.2.2.tar.gz
+```
+
+자 앞에서 받은 파일을 서버로 복사해 보겠습니다.
+
+```bash
+ansible all -m copy -a "src=hadoop-3.2.2.tar.gz  dest=~/" -i new_hosts
+```
+
+다음과 같이 작동됩니다.
+
+```bash
+❯ ansible all -m copy -a "src=hadoop-3.2.2.tar.gz  dest=~/" -i new_hosts
+
+raspberrypi.local | CHANGED => {
+    "changed": true,
+    "checksum": "f4fa4e95192c6bb33258b8bd7adb0267a306ba27",
+    "dest": "/home/pi/hadoop-3.2.2.tar.gz",
+    "gid": 1000,
+    "group": "pi",
+    "md5sum": "e7cebb6420657030539dc644ed7ee1f0",
+    "mode": "0644",
+    "owner": "pi",
+    "size": 395448622,
+    "src": "/home/pi/.ansible/tmp/ansible-tmp-1616143409.119393-82690-53250984102454/source",
+    "state": "file",
+    "uid": 1000
+}
+```
+
+이번에는 각본(playbook)을 만들어서 복사해 보겠습니다. `copy.yml`라는 이름을 가진 파일을 만들어서, 다음과 같이 입력합니다.
+
+```yaml
+---
+- hosts: all
+  remote_user: root
+  tasks:
+  - name: store file to remote server
+    copy:
+      src: hadoop-3.2.2.tar.gz 
+      dest: ~/hadoop-3.2.2.tar.gz 
+
+```
+
+앞에서 만든 파일을 `ansible-playbook copy.yml -i new_hosts`으로 실행합니다. 결과는 다음과 같습니다.
+
+```bash
+❯ ansible-playbook copy.yml -i new_hosts
+
+PLAY [all] ******************************************************************************************************************************************************
+
+TASK [Gathering Facts] ******************************************************************************************************************************************
+ok: [raspberrypi.local]
+
+TASK [store file to remote server] ******************************************************************************************************************************
+changed: [raspberrypi.local]
+
+PLAY RECAP ******************************************************************************************************************************************************
+raspberrypi.local          : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+```
+
+서버에 들어가보니 잘 복사되어 있습니다!
+
+```bash
+pi@raspberrypi:~ $ ls -ls
+total 386188
+386188 -rw-r--r-- 1 pi pi 395448622 Mar 18 09:28 hadoop-3.2.2.tar.gz
+```
