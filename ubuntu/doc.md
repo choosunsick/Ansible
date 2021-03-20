@@ -9,7 +9,7 @@ docker build --force-rm --tag ubuntu_ansible:0.1 .
 아래 것이 정확하게 작동 안 합니다.
 
 ```bash
-docker run ubuntu_ansible -p 1234:22 -p 1235:80
+docker run -p 1234:22 -p 1235:80 ubuntu_ansible
 ```
 
 자 들어가보겠습니다.
