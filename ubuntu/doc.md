@@ -6,7 +6,7 @@
 docker build --force-rm --tag ubuntu_ansible:0.1 .
 ```
 
-아래 것이 정확하게 작동 안 합니다.
+만든 이미지로 도커 컨테이너를 생성합니다.
 
 ```bash
 docker run -p 1234:22 -p 1235:80 ubuntu_ansible
