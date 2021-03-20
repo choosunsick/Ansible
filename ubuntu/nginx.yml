@@ -1,0 +1,18 @@
+---
+- hosts: all
+  user: pi
+  tasks:
+    - name: Update and upgrade apt packages
+      become: true
+      apt:
+        upgrade: "yes" # not: yes
+        update_cache: yes
+        cache_valid_time: 86400 #One day
+    - name: ensure nginx is at the latest version
+      become: true
+      apt: name=nginx state=latest
+    - name: start nginx
+      become: true
+      service:
+          name: nginx
+          state: started
