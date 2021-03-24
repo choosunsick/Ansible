@@ -94,3 +94,17 @@ Pi is roughly 3.141879141879142
 - 호스트 이름을 `3`과 같이 숫자로 시작하지 마세요. 오류발생!
 - `ansible.cfg`파일이 있어야 엔서블 에러를 피할 수 있습니다.
 - `Spark_Stand_Alone.yml`파일이 미숙한 점이 많아서 보완해야 합니다. 보완해야 할 점들이 주석으로 되어 있습니다.
+
+## 보안할 내용
+
+아래와 같은 코드를 사용하면, 현재 사용하고 있는 코드에서 많은 부분을 줄일 수 있을 것 같네요.
+
+```yaml
+- name: unarchive hadoop-2.9.0.tar.gz
+unarchive:
+src: "{{ apps_directory }}/hadoop-2.9.0.tar.gz"
+dest: "{{ apps_directory }}/"
+remote_src: yes
+```
+
+- 출처: [Ansible 자주 사용하는 모듈 : 네이버 블로그](http://blog.naver.com/PostView.nhn?blogId=gksdbwjd2725&logNo=221317843595&parentCategoryNo=&categoryNo=26&viewDate=&isShowPopularPosts=true&from=search)
