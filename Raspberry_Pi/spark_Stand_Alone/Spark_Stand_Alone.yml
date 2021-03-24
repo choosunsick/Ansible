@@ -60,5 +60,10 @@
       become: true
       command: chown pi:pi -R /opt/spark
 # 설치가 끝났으면 리부팅합니다.
-    - name: Reboot the server and wait for it to come back up.
+      notify:
+      - Reboot the server
+# handlers 를 이용해 구형하는 경우 윗 chown spark를 실행되지 않으면
+# handlers 에 들어있는 리부팅이 실행되지 않습니다.
+  handlers:
+    - name: Reboot the server
       reboot:
