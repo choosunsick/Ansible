@@ -59,3 +59,6 @@
     - name:  chown spark
       become: true
       command: chown pi:pi -R /opt/spark
+# 설치가 끝났으면 리부팅합니다.
+    - name: Reboot the server and wait for it to come back up.
+      reboot:
