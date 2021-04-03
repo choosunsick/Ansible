@@ -13,6 +13,7 @@
       apt: name=nginx state=latest
     - name: start nginx
       become: true
+      become_user: root
       service:
           name: nginx
           state: started

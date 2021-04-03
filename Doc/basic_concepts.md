@@ -18,25 +18,25 @@
 <!-- However, you cannot use a Windows machine as a control node. You can have multiple control nodes. -->
 그러나, 윈도우 머신은 관리자 노드로 사용할 수 없다. 여러분은 멀티플 관리자 모드들을 사용할 수 있다.
 
-## 관리할 노드(Managed nodes)
+## 관리 노드(Managed nodes)
 
 <!-- The network devices (and/or servers) you manage with Ansible. -->
-여러분이 앤서블로 관리할 네트워크 장치(device)들 (그리고/ 또는 서버들).
+여러분이 앤서블로 관리 네트워크 장치(device)들 (그리고/ 또는 서버들).
 <!-- Managed nodes are also sometimes called “hosts”. -->
-관리할 노드들은 또한 때때로 “호스트(host)들”이라고 불리기도 합니다.
+관리 노드들은 또한 때때로 “호스트(host)들”이라고 불리기도 합니다.
 <!-- Ansible is not installed on managed nodes. -->
-앤서블은 관리할 노드에는 설치되지 않습니다.
+앤서블은 관리 노드에는 설치되지 않습니다.
 
 ## 인벤토리(Inventory)
 
 <!-- A list of managed nodes. -->
-관리할 노드들의 목록
+관리 노드들의 목록
 <!-- An inventory file is also sometimes called a “hostfile”. -->
 인벤토리 파일은 또란 "호스트파일(hostfile)"이라고 부르기도 합니다.
 <!-- Your inventory can specify information like IP address for each managed node. -->
-여러분의 인벤토리는 관리할 노드를 위한 각각의 IP와 같은 정보를 기술할 수 있습니다.
+여러분의 인벤토리는 관리 노드를 위한 각각의 IP와 같은 정보를 기술할 수 있습니다.
 An inventory can also organize managed nodes, creating and nesting groups for easier scaling.
-인벤토리는 또한 관리할 노드들을 
+인벤토리는 또한 관리 노드들을 
 <!-- To learn more about inventory, see the Working with Inventory section. -->
 인벤토리에 대하여 더 많이 알려면, 인벤토리로 일하기 절을 보세요.
 

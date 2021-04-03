@@ -1,0 +1,9 @@
+[all]
+three.local
+;1.local
+;2.local
+
+[all:vars]
+ansible_python_interpreter=/usr/bin/python3
+ansible_user=pi
+ansible_ssh_pass=raspberry
