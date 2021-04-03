@@ -5,10 +5,3 @@ localhost
 ansible_python_interpreter=/usr/bin/python3
 ansible_user=pi
 ansible_ssh_pass=raspberry
-
-[master]
-master.local
-
-[worker]
-worker1.local
-worker2.local
